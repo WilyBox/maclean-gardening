@@ -21,8 +21,8 @@ export default function TestimonialSection() {
           {/* Content */}
           <div className="p-6 text-center flex-grow">
             <blockquote className="text-lg font-light italic text-gray-700">
-                "Are you in the Cowal or Dunoon area and looking for reliable garden care - then look no further.
-                At MacLean's Gardening we provide diligent garden maintenance "
+                {`"Are you in the Cowal or Dunoon area and looking for reliable garden care - then look no further.
+                At MacLean's Gardening we provide diligent garden maintenance " `}
             </blockquote>
 
             {/* Client Info */}
