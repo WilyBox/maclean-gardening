@@ -1,5 +1,5 @@
 import ModernCarousel from "./ModernCarousel";
-import {SwipeCarousel} from "./SwipeCarousel";
+// import {SwipeCarousel} from "./SwipeCarousel";
 
 export default function HeroSimple() {
   return (

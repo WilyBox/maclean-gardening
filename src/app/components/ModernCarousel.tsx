@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 import { AnimatePresence, motion } from "framer-motion";
+import Image from "next/image"; // Import Next.js Image component
 
 const projects = [
   {
@@ -59,10 +60,12 @@ export default function ModernCarousel() {
           >
             {/* Before Image */}
             <div className="relative w-1/2 h-full rounded-lg overflow-hidden max-h-96 lg:max-h-none">
-              <img
+              <Image
                 src={projects[projectIndex].before}
                 alt="Before"
-                className="absolute inset-0 w-full h-full object-cover"
+                layout="fill"
+                objectFit="cover"
+                priority
               />
               {/* Before Badge - Centered at Top */}
               <span className="absolute top-3 left-1/2 transform -translate-x-1/2 bg-black text-white px-4 py-2 text-sm font-semibold rounded-md backdrop-blur-md shadow-lg">
@@ -72,10 +75,12 @@ export default function ModernCarousel() {
 
             {/* After Image */}
             <div className="relative w-1/2 h-full rounded-lg overflow-hidden max-h-96 lg:max-h-none">
-              <img
+              <Image
                 src={projects[projectIndex].after}
                 alt="After"
-                className="absolute inset-0 w-full h-full object-cover"
+                layout="fill"
+                objectFit="cover"
+                priority
               />
               {/* After Badge - Centered at Top */}
               <span className="absolute top-3 left-1/2 transform -translate-x-1/2 bg-green-700 text-white px-4 py-2 text-sm font-semibold rounded-md backdrop-blur-md shadow-lg">
