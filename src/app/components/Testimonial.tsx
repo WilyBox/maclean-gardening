@@ -56,7 +56,7 @@ export default function TestimonialSection() {
         {/* Bottom Card: Simple Testimonial + Rating */}
         <div className="bg-white shadow-lg rounded-2xl p-6 flex flex-col justify-between">
           <p className="text-lg font-light italic text-gray-700">
-            "Hard-working, very approachable, answered all of my questions. Extremely knowledgeable and down to earth. 5 stars!"
+          {`Hard-working, very approachable, answered all of my questions. Extremely knowledgeable and down to earth. 5 stars!`}
           </p>
           
           
