@@ -60,3 +60,10 @@ html, body {
   color: #047857; /* Darker green */
   font-weight: 600;
 }
+
+
+svg {
+  fill: currentColor !important; /* Ensures correct fill */
+  stroke: currentColor !important; /* Ensures stroke color */
+  opacity: 1 !important; /* Ensures full opacity */
+}

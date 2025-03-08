@@ -72,7 +72,7 @@ export default function RootLayout({
     <html lang="en" className={poppins.variable}>
       <body className={`${poppins.variable} ${geistMono.variable} antialiased`}>
         <Navbar /> {/* Include the Navbar here */}
-        <Layout>{children}</Layout>
+        {children}
       </body>
     </html>
   );
