@@ -1,16 +1,15 @@
 import ModernCarousel from "./ModernCarousel";
-// import {SwipeCarousel} from "./SwipeCarousel";
 
 export default function HeroSimple() {
   return (
-    <section className="relative w-full px-8 py-12 max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 items-center gap-8">
-      {/* Left Side - Text */}
-      <div className="text-center lg:text-left">
+    <section className="relative w-full px-8 py-12 max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-8">
+      {/* Left Side - Text (flex-shrink) */}
+      <div className="text-center lg:text-left flex-shrink-0 max-w-lg">
         <h1 className="text-5xl md:text-6xl font-bold text-gray-900 leading-tight">
           Transform Your Outdoor Space
         </h1>
         <p className="mt-4 text-lg text-gray-700">
-        Providing reliable garden care for Dunoon and surrounding areas. Get in touch for a free quote.
+          Providing reliable garden care for Dunoon and surrounding areas. Get in touch for a free quote.
         </p>
         <div className="mt-8 flex flex-col sm:flex-row justify-center lg:justify-start gap-4">
           <a
@@ -28,8 +27,8 @@ export default function HeroSimple() {
         </div>
       </div>
 
-      {/* Right Side - Carousel */}
-      <div className="w-full max-w-2xl mx-auto lg:max-w-none">
+      {/* Right Side - Carousel (flex-grow) */}
+      <div className="w-full flex-grow h-full">
         <ModernCarousel />
       </div>
     </section>
