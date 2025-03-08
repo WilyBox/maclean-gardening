@@ -11,13 +11,6 @@ export default function Home() {
       <HeroSimple />
       <Testimonial />
       <FeedbackCards />
-
-
-     
-
-      {/* <section className="">
-        <BeforeAfterImageSlider />
-      </section> */}
     </Layout>
   );
 }

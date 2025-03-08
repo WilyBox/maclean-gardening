@@ -5,6 +5,7 @@ import { useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { FiMenu, FiX } from "react-icons/fi";
+import { FaFacebook } from "react-icons/fa"; // Import Facebook icon
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -12,8 +13,9 @@ export default function Navbar() {
   return (
     <div className="relative w-full bg-white shadow-md z-50">
       <nav className="flex items-center justify-between px-6 lg:px-12 py-4" aria-label="Global">
-        {/* Logo */}
-        <div className="flex flex-shrink-0">
+        {/* Logo and Facebook Icon */}
+        <div className="flex items-center space-x-4">
+          {/* Logo */}
           <Link href="/" className="p-1.5">
             <span className="sr-only">Maclean Gardening</span>
             <Image
@@ -23,6 +25,16 @@ export default function Navbar() {
               width={320}
               height={80}
             />
+          </Link>
+
+          {/* Facebook Icon */}
+          <Link 
+            href="https://www.facebook.com/profile.php?id=61568108347078" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="text-blue-600 hover:text-blue-800 transition-all"
+          >
+            <FaFacebook size={32} />
           </Link>
         </div>
 
