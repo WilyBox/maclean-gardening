@@ -40,7 +40,7 @@ export default function ModernCarousel() {
 
   return (
     <div 
-      className="relative w-full max-w-7xl mx-auto h-[400px] flex flex-col justify-center items-center overflow-hidden cursor-pointer"
+      className="relative w-full max-w-7xl mx-auto h-[300px] sm:h-[350px] md:h-[400px] flex flex-col justify-center items-center overflow-hidden cursor-pointer"
       onClick={handleNextImage} // Clicking anywhere advances the image
     >
       <AnimatePresence mode="wait">
@@ -66,7 +66,6 @@ export default function ModernCarousel() {
           </span>
         </motion.div>
       </AnimatePresence>
-
 
       {/* Dots (6 total for 3 projects × 2 images each) */}
       <div className="absolute bottom-4 flex space-x-2">
