@@ -7,10 +7,11 @@ import Testimonial from "./components/Testimonial";
 export default function Home() {
   return (
     <Layout>
+      <HeroSimple />
       <Testimonial />
 
 
-      <HeroSimple />
+     
 
       {/* <section className="">
         <BeforeAfterImageSlider />

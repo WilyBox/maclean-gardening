@@ -6,21 +6,18 @@ import Image from "next/image"; // Next.js optimized images
 
 const projects = [
   {
-    before: "/images/1-before.jpg",
-    after: "/images/1-after.jpg",
-    title: "Backyard Makeover",
+    before: "/images/3-before.jpg",
+    after: "/images/3-after.jpg",
     id: 1,
   },
   {
     before: "/images/2-before.jpg",
     after: "/images/2-after.jpg",
-    title: "Lawn Restoration",
     id: 2,
   },
   {
-    before: "/images/3-before.jpg",
-    after: "/images/3-after.jpg",
-    title: "Hedge Trimming",
+    before: "/images/1-before.jpg",
+    after: "/images/1-after.jpg",
     id: 3,
   },
 ];
@@ -43,7 +40,7 @@ export default function ModernCarousel() {
 
   return (
     <div 
-      className="relative w-full max-w-7xl mx-auto h-[600px] flex flex-col justify-center items-center overflow-hidden cursor-pointer"
+      className="relative w-full max-w-7xl mx-auto h-[400px] flex flex-col justify-center items-center overflow-hidden cursor-pointer"
       onClick={handleNextImage} // Clicking anywhere advances the image
     >
       <AnimatePresence mode="wait">
@@ -70,17 +67,6 @@ export default function ModernCarousel() {
         </motion.div>
       </AnimatePresence>
 
-      {/* Project Title */}
-      <motion.span
-        key={projectIndex}
-        initial={{ opacity: 0, y: 10 }}
-        animate={{ opacity: 1, y: 0 }}
-        exit={{ opacity: 0, y: -10 }}
-        transition={{ duration: 0.4 }}
-        className="absolute bottom-16 left-1/2 transform -translate-x-1/2 bg-white/10 backdrop-blur-md text-white text-lg md:text-xl px-4 py-2 rounded-lg shadow-lg font-semibold"
-      >
-        {currentProject.title}
-      </motion.span>
 
       {/* Dots (6 total for 3 projects × 2 images each) */}
       <div className="absolute bottom-4 flex space-x-2">
