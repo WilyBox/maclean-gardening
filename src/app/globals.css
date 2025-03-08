@@ -34,8 +34,29 @@ html, body {
 }
 
 
+.text-gray-700,
+.text-gray-900,
+.text-gray-500,
+.text-green-700 {
+  opacity: 1; /* Ensures full opacity */
+}
+
 .text-gray-700 {
   color: #4a4a4a; /* Darker gray */
-  font-weight: 500; /* Makes it bolder */
-  opacity: 1; /* Ensures opacity */
+  font-weight: 500;
+}
+
+.text-gray-900 {
+  color: #1a1a1a; /* Slightly darker for better contrast */
+  font-weight: 600;
+}
+
+.text-gray-500 {
+  color: #6b7280; /* Adjust if necessary */
+  font-weight: 400; /* Keeps it lighter but fully opaque */
+}
+
+.text-green-700 {
+  color: #047857; /* Darker green */
+  font-weight: 600;
 }

@@ -6,18 +6,18 @@ import Image from "next/image"; // Next.js optimized images
 
 const projects = [
   {
-    before: "/images/3-before.jpg",
-    after: "/images/3-after.jpg",
+    before: "/images/3-before.webp",
+    after: "/images/3-after.webp",
     id: 1,
   },
   {
-    before: "/images/2-before.jpg",
-    after: "/images/2-after.jpg",
+    before: "/images/2-before.webp",
+    after: "/images/2-after.webp",
     id: 2,
   },
   {
-    before: "/images/1-before.jpg",
-    after: "/images/1-after.jpg",
+    before: "/images/1-before.webp",
+    after: "/images/1-after.webp",
     id: 3,
   },
 ];
