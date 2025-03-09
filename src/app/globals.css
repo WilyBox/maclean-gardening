@@ -35,10 +35,12 @@ html, body {
 
 .text-blue-600,
 .text-blue-800,
-.text-gray-500
-.text-gray-700,
-.text-gray-900,
+.text-gray-400,
 .text-gray-500,
+.text-gray-600,
+.text-gray-700,
+.text-gray-800,
+.text-gray-900,
 .text-green-700 {
   opacity: 1; /* Ensures full opacity */
 }
