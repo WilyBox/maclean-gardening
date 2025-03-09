@@ -72,8 +72,8 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className={poppins.variable}>
-      <body className={`${poppins.variable} ${geistMono.variable} antialiased`}>
-        <Navbar /> 
+      <body className={`${poppins.variable} ${geistMono.variable} antialiased bg-white`}>
+        <Navbar /> {/* Include the Navbar here */}
         {children}
         <Footer />
       </body>

@@ -4,7 +4,7 @@ import { FaFacebook } from "react-icons/fa";
 
 export default function Footer() {
   return (
-    <footer className="bg-white shadow-md py-6 mt-10">
+    <footer className="bg-white shadow-md pb-6 pt-10">
       <div className="container mx-auto px-6 lg:px-12 flex flex-col md:flex-row items-center justify-between">
         {/* Logo */}
         <Link href="/" className="p-1.5">
