@@ -45,9 +45,24 @@ html, body {
   opacity: 1; /* Ensures full opacity */
 }
 
+.text-gray-500 {
+  color: #6b7280; /* Adjust if necessary */
+  font-weight: 400; /* Keeps it lighter but fully opaque */
+}
+
+.text-gray-600 {
+  color: #4a4c50; /* Adjust if necessary */
+  font-weight: 400; /* Keeps it lighter but fully opaque */
+}
+
 .text-gray-700 {
   color: #4a4a4a; /* Darker gray */
   font-weight: 500;
+}
+
+.text-gray-800 {
+  color: #4a4a4a; /* Darker gray */
+  font-weight: 550;
 }
 
 .text-gray-900 {
@@ -55,10 +70,7 @@ html, body {
   font-weight: 600;
 }
 
-.text-gray-500 {
-  color: #6b7280; /* Adjust if necessary */
-  font-weight: 400; /* Keeps it lighter but fully opaque */
-}
+
 
 .text-green-700 {
   color: #047857; /* Darker green */
@@ -71,4 +83,23 @@ svg {
   fill: currentColor !important;
   stroke: currentColor !important;
   opacity: 1 !important; /* Ensures full opacity */
+}
+
+
+a {
+  opacity: 1 !important; /* Ensures full visibility */
+  visibility: visible !important; /* Ensures the button is not hidden */
+}
+
+
+.border-gray-300 {
+  border-color: #d1d5db !important; /* Ensures correct border color */
+  opacity: 1 !important; /* Ensures full opacity */
+  visibility: visible !important; /* Ensures it's not hidden */
+}
+
+.bg-green-600 {
+  background-color: #16a34a !important; /* Ensures correct green shade */
+  opacity: 1 !important; /* Ensures full opacity */
+  visibility: visible !important; /* Ensures it's not hidden */
 }

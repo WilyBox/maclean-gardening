@@ -14,7 +14,7 @@ export default function HeroSimple() {
         <div className="mt-8 flex flex-col sm:flex-row justify-center lg:justify-start gap-4">
           <a
             href="/services"
-            className="rounded-md bg-green-600 px-6 py-3 text-white text-lg font-semibold hover:bg-green-700"
+            className="inline-block rounded-md bg-green-600 px-6 py-3 text-white text-lg font-semibold hover:bg-green-700"
           >
             Get Started
           </a>
