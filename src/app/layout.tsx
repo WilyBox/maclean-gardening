@@ -3,7 +3,7 @@ import { Poppins } from "next/font/google";
 import { Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/app/components/Navbar"; // Import Navbar
-import Layout from "@/app/components/Layout"; // Import Layout
+// import Layout from "@/app/components/Layout"; // Import Layout
 
 // Font setup
 const poppins = Poppins({
