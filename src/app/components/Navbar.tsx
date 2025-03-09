@@ -32,7 +32,7 @@ export default function Navbar() {
             href="https://www.facebook.com/profile.php?id=61568108347078" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="text-blue-600 hover:text-blue-800 transition-all"
+            className="logo-color-facebook hover:text-blue-800 transition-all"
           >
             <FaFacebook size={32} />
           </Link>

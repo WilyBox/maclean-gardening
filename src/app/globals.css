@@ -103,3 +103,8 @@ a {
   opacity: 1 !important; /* Ensures full opacity */
   visibility: visible !important; /* Ensures it's not hidden */
 }
+
+.logo-color-facebook {
+  color: #155dfc !important; /* Ensures correct blue shade */
+  opacity: 1 !important; /* Ensures full opacity */
+}
