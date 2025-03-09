@@ -108,3 +108,9 @@ a {
   color: #155dfc !important; /* Ensures correct blue shade */
   opacity: 1 !important; /* Ensures full opacity */
 }
+
+.logo-color-google {
+  color: rgb(52, 168, 83)!important; /* Ensures correct green shade */
+  opacity: 1 !important; /* Ensures full opacity */
+}
+

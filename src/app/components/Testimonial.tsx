@@ -84,16 +84,16 @@ export default function TestimonialSection() {
           {/* Rating Footer */}
           <div className="border-t mt-4 pt-4 text-center space-y-2">
             {/* Facebook Rating */}
-            <div className="flex items-center justify-center gap-2 text-green-700 font-semibold">
-              <FaFacebook className="text-blue-600 text-xl" />
-              <span>5/5 Stars on Facebook</span>
+            <div className="flex items-center justify-center gap-2 font-semibold">
+              <FaFacebook className="logo-color-facebook text-xl" />
+              <span className="text-gray-700">5/5 on Facebook</span>
               <span className="text-yellow-500">⭐⭐⭐⭐⭐</span>
             </div>
 
             {/* Google Rating */}
-            <div className="flex items-center justify-center gap-2 text-green-700 font-semibold">
-              <FaGoogle className="text-red-500 text-xl" />
-              <span>5/5 Stars on Google</span>
+            <div className="flex items-center justify-center gap-2 font-semibold">
+              <FaGoogle className="logo-color-google text-xl" />
+              <span className="text-gray-700">5/5 on Google</span>
               <span className="text-yellow-500">⭐⭐⭐⭐⭐</span>
             </div>
           </div>
