@@ -32,7 +32,7 @@ const FeedbackCards: FC = () => {
           <div key={index} className="bg-white shadow-lg rounded-lg p-6 flex flex-col h-full">
             {/* Facebook Icon */}
             <div className="mb-2">
-              <FaFacebook className="text-blue-600 text-2xl" />
+              <FaFacebook className="logo-color-facebook text-2xl" />
             </div>
 
             <p className="mb-auto text-gray-700">{testimonial.text}</p>

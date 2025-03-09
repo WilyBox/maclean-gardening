@@ -4,6 +4,8 @@ import { Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/app/components/Navbar"; // Import Navbar
 // import Layout from "@/app/components/Layout"; // Import Layout
+import Footer from "@/app/components/Footer"; // Import Footer
+
 
 // Font setup
 const poppins = Poppins({
@@ -71,8 +73,9 @@ export default function RootLayout({
   return (
     <html lang="en" className={poppins.variable}>
       <body className={`${poppins.variable} ${geistMono.variable} antialiased`}>
-        <Navbar /> {/* Include the Navbar here */}
+        <Navbar /> 
         {children}
+        <Footer />
       </body>
     </html>
   );
