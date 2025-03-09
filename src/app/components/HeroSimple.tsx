@@ -2,7 +2,7 @@ import ModernCarousel from "./ModernCarousel";
 
 export default function HeroSimple() {
   return (
-    <section className="relative w-full px-8 py-12 max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-8">
+    <section className="relative w-full px-8 pb-12 max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-8">
       {/* Left Side - Text (flex-shrink) */}
       <div className="text-center lg:text-left flex-shrink-0 max-w-lg">
         <h1 className="text-5xl md:text-6xl font-bold text-gray-900 leading-tight">

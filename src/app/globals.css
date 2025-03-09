@@ -33,7 +33,9 @@ html, body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-
+.text-blue-600,
+.text-blue-800,
+.text-gray-500
 .text-gray-700,
 .text-gray-900,
 .text-gray-500,
@@ -62,8 +64,9 @@ html, body {
 }
 
 
+/* Ensure React Icons render correctly across all devices */
 svg {
-  fill: currentColor !important; /* Ensures correct fill */
-  stroke: currentColor !important; /* Ensures stroke color */
+  fill: currentColor !important;
+  stroke: currentColor !important;
   opacity: 1 !important; /* Ensures full opacity */
 }

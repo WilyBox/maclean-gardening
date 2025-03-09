@@ -55,8 +55,8 @@ export default function ModernCarousel() {
           <Image
             src={showBefore ? currentProject.before : currentProject.after}
             alt={showBefore ? "Before" : "After"}
-            layout="fill"
-            objectFit="cover"
+            fill // ✅ Instead of layout="fill"
+            style={{ objectFit: "cover" }} // ✅ Instead of objectFit="cover"
             priority
           />
           {/* Badge to indicate Before/After */}
