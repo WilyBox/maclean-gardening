@@ -14,8 +14,8 @@ export default function TestimonialSection() {
     <div className="relative w-full h-80">
       <Image
         className="object-cover w-full h-full"
-        src="/images/client1.webp"
-        alt="Client Testimonial"
+        src="/images/owner1.webp"
+        alt="Picture of gardener for Dunoon and surroundingareas"
         layout="fill"
         priority
       />
@@ -70,7 +70,7 @@ export default function TestimonialSection() {
       {/* Right Column: Services + Ratings */}
       <div className="lg:w-1/2 flex flex-col gap-8">
         {/* Top Card: Services Accordion (Replaces old list) */}
-        <div className="bg-white shadow-lg rounded-2xl p-6">
+        <div className="bg-white shadow-lg rounded-2xl p-6" id="servicesAccordion">
           <SimpleAccordion /> {/* ✅ Insert Accordion Here */}
         </div>
 

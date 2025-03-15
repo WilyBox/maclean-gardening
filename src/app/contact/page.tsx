@@ -2,6 +2,7 @@
 
 import Image from 'next/image';
 import { useState } from 'react';
+import { FaFacebook } from 'react-icons/fa';
 
 export default function ContactUs() {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
@@ -17,14 +18,16 @@ export default function ContactUs() {
   };
 
   return (
-    <div className="relative flex items-center justify-center min-h-screen bg-gray-900">
+    <div className="relative flex flex-col items-center justify-center min-h-screen bg-gray-900 p-4 space-y-6">
       <Image 
-        src="/images/contact-us-nature.jpg" 
+        src="/images/contact-us-nature.webp" 
         alt="Contact Us" 
         layout="fill" 
         objectFit="cover" 
         className="absolute inset-0 z-0"
       />
+
+      {/* Contact Form Card */}
       <div className="relative bg-transparent p-6 rounded-lg shadow-md w-full max-w-md z-10 border-2 border-white">
         <h2 className="text-2xl font-bold mb-4 text-white text-center">Contact Us</h2>
         <form onSubmit={handleSubmit} className="flex flex-col space-y-4">
@@ -61,6 +64,20 @@ export default function ContactUs() {
             Send Message
           </button>
         </form>
+      </div>
+
+      {/* Facebook Contact Card */}
+      <div className="relative bg-transparent p-6 rounded-lg shadow-md w-full max-w-md z-10 border-2 border-white text-center flex flex-col items-center">
+        <p className="text-white text-lg mb-3 font-bold">Or reach out to us on Facebook!</p>
+        <a 
+          href="https://www.facebook.com/profile.php?id=61568108347078"
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="flex items-center space-x-2 bg-white text-gray-900 px-4 py-2 rounded-lg hover:bg-gray-300 transition-all"
+        >
+          <FaFacebook size={24} className="logo-color-facebook " />
+          <span>Visit Our Facebook</span>
+        </a>
       </div>
     </div>
   );

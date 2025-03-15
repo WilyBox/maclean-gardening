@@ -25,6 +25,7 @@ const FeedbackCards: FC = () => {
     <div className="container mx-auto py-12 px-4 sm:px-6 lg:px-8">
       <div className="w-full lg:w-1/2 mb-10">
         <h2 className="text-2xl font-bold text-gray-900">Feedback from gardening clients in Cowal, Dunoon and Argyle</h2>
+        <p className="text-2xl font-bold logo-color-facebook"><a href="https://www.facebook.com/profile.php?id=61568108347078" target="_blank" rel="noopener noreferrer">Check us out on Facebook</a></p>
       </div>
       
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">

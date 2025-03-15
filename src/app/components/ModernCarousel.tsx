@@ -29,15 +29,19 @@ export default function ModernCarousel() {
     return () => window.removeEventListener("resize", checkScreenSize);
   }, []);
 
-  // Preload next image safely
+  // ✅ Immediately preload the next image
   useEffect(() => {
     if (typeof window !== "undefined") {
-      const nextImg = document.createElement("img"); // ✅ Safe alternative to new Image()
-      nextImg.src = isMobile
-        ? images[(idx + 1) % images.length].mobileSrc
-        : images[(idx + 1) % images.length].src;
+      const nextIndex = (idx + 1) % images.length;
+
+      // Preload both mobile and desktop versions
+      const preloadDesktop = document.createElement("img");
+      preloadDesktop.src = images[nextIndex].src;
+
+      const preloadMobile = document.createElement("img");
+      preloadMobile.src = images[nextIndex].mobileSrc;
     }
-  }, [idx, isMobile]);
+  }, [idx]);
 
   const handleNextImage = () => {
     setIdx((prevIdx) => (prevIdx + 1) % images.length);
