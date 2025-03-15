@@ -5,27 +5,43 @@ import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image"; // Next.js optimized images
 
 const images = [
-  { src: "/images/3-before.webp", id: 1 },
-  { src: "/images/3-after.webp", id: 2 },
-  { src: "/images/2-before.webp", id: 3 },
-  { src: "/images/2-after.webp", id: 4 },
-  { src: "/images/1-before.webp", id: 5 },
-  { src: "/images/1-after.webp", id: 6 },
+  { src: "/images/3-before.webp", mobileSrc: "/images/3-before-small.webp", id: 1 },
+  { src: "/images/3-after.webp", mobileSrc: "/images/3-after-small.webp", id: 2 },
+  { src: "/images/2-before.webp", mobileSrc: "/images/2-before-small.webp", id: 3 },
+  { src: "/images/2-after.webp", mobileSrc: "/images/2-after-small.webp", id: 4 },
+  { src: "/images/1-before.webp", mobileSrc: "/images/1-before-small.webp", id: 5 },
+  { src: "/images/1-after.webp", mobileSrc: "/images/1-after-small.webp", id: 6 },
 ];
 
 export default function ModernCarousel() {
   const [idx, setIdx] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
+
+  // Detect if the screen is mobile
+  useEffect(() => {
+    const checkScreenSize = () => setIsMobile(window.innerWidth < 640);
+
+    if (typeof window !== "undefined") {
+      checkScreenSize(); // Run on mount
+      window.addEventListener("resize", checkScreenSize);
+    }
+
+    return () => window.removeEventListener("resize", checkScreenSize);
+  }, []);
+
+  // Preload next image safely
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const nextImg = document.createElement("img"); // ✅ Safe alternative to new Image()
+      nextImg.src = isMobile
+        ? images[(idx + 1) % images.length].mobileSrc
+        : images[(idx + 1) % images.length].src;
+    }
+  }, [idx, isMobile]);
 
   const handleNextImage = () => {
-    setIdx((prevIdx) => (prevIdx + 1) % images.length); // Move forward sequentially
+    setIdx((prevIdx) => (prevIdx + 1) % images.length);
   };
-
-  useEffect(() => {
-    if (typeof window !== "undefined") { // ✅ Ensure it runs only on the client
-      const nextImage = document.createElement("img"); // ✅ Safe alternative
-      nextImage.src = images[(idx + 1) % images.length].src; // Preload next image
-    }
-  }, [idx]);
 
   return (
     <div
@@ -41,14 +57,16 @@ export default function ModernCarousel() {
           transition={{ duration: 0.3 }}
           className="absolute w-full h-full rounded-lg overflow-hidden"
         >
+          {/* Dynamically choose mobile or desktop image */}
           <Image
-            src={images[idx].src}
+            src={isMobile ? images[idx].mobileSrc : images[idx].src}
             alt={`Image ${idx + 1}`}
             fill
             style={{ objectFit: "cover" }}
             priority
             loading="eager"
           />
+
           {/* Badge to indicate Before/After */}
           <span className="absolute top-3 left-1/2 transform -translate-x-1/2 px-4 py-2 text-sm font-semibold rounded-md backdrop-blur-md shadow-lg bg-black text-white">
             {idx % 2 === 0 ? "Before" : "After"}
