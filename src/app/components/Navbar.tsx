@@ -1,21 +1,52 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { usePathname, useRouter } from "next/navigation";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { FiMenu, FiX } from "react-icons/fi";
-import { FaFacebook } from "react-icons/fa"; // Import Facebook icon
+import { FaFacebook } from "react-icons/fa"; 
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const pathname = usePathname(); // Get current page
+  const router = useRouter(); // Next.js router for navigation
+
+  // Scroll smoothly after navigating to the homepage
+  useEffect(() => {
+    if (typeof window !== "undefined" && window.location.hash === "#services-accordion") {
+      const element = document.getElementById("services-accordion");
+      if (element) {
+        setTimeout(() => {
+          element.scrollIntoView({ behavior: "smooth" });
+        }, 100);
+      }
+    }
+  }, []);
+
+  const handleServicesClick = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
+    e.preventDefault();
+
+    if (pathname === "/") {
+      // If already on the home page, just scroll
+      const element = document.getElementById("services-accordion");
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    } else {
+      // If on another page, navigate to home and scroll after loading
+      router.push("/#services-accordion");
+    }
+
+    setMenuOpen(false); // Close mobile menu after clicking
+  };
 
   return (
     <div className="relative w-full bg-white shadow-md z-50">
       <nav className="flex items-center justify-between px-6 lg:px-12 py-4" aria-label="Global">
         {/* Logo and Facebook Icon */}
         <div className="flex items-center space-x-4">
-          {/* Logo */}
           <Link href="/" className="p-1.5">
             <span className="sr-only">Maclean Gardening</span>
             <Image
@@ -27,7 +58,6 @@ export default function Navbar() {
             />
           </Link>
 
-          {/* Facebook Icon */}
           <Link 
             href="https://www.facebook.com/profile.php?id=61568108347078" 
             target="_blank" 
@@ -43,19 +73,13 @@ export default function Navbar() {
           <Link href="/" className="text-lg font-semibold text-gray-900 hover:text-green-700 transition-all font-poppins">
             Home
           </Link>
-          <a 
-                href="/#servicesAccordion" 
-                onClick={(e) => {
-                  e.preventDefault();
-                  const element = document.getElementById("servicesAccordion");
-                  if (element) {
-                    element.scrollIntoView({ behavior: "smooth" });
-                  }
-                }}
-                className="text-lg font-medium text-gray-800 hover:text-green-600 transition-all font-poppins tracking-wide cursor-pointer"
-            >
-              Services
-            </a>
+          <Link 
+            href="/#services-accordion" 
+            onClick={handleServicesClick}
+            className="text-lg font-medium text-gray-800 hover:text-green-600 transition-all font-poppins tracking-wide cursor-pointer"
+          >
+            Services
+          </Link>
           <Link href="/about" className="text-lg font-semibold text-gray-900 hover:text-green-700 transition-all font-poppins">
             About
           </Link>
@@ -85,37 +109,34 @@ export default function Navbar() {
             className="absolute top-full left-0 w-full bg-white shadow-lg lg:hidden"
           >
             <div className="flex flex-col items-center space-y-6 py-6 px-8">
-            <Link 
+              <Link 
                 href="/" 
                 className="text-lg font-medium text-gray-800 hover:text-green-600 transition-all font-poppins tracking-wide"
-            >
-              Home
-            </Link>
-            <a 
-                href="/#servicesAccordion" 
-                onClick={(e) => {
-                  e.preventDefault();
-                  const element = document.getElementById("servicesAccordion");
-                  if (element) {
-                    element.scrollIntoView({ behavior: "smooth" });
-                  }
-                }}
+                onClick={() => setMenuOpen(false)}
+              >
+                Home
+              </Link>
+              <Link 
+                href="/#services-accordion" 
+                onClick={handleServicesClick}
                 className="text-lg font-medium text-gray-800 hover:text-green-600 transition-all font-poppins tracking-wide cursor-pointer"
-            >
-              Services
-            </a>
-            <Link 
-              href="/about" 
-              className="text-lg font-medium text-gray-800 hover:text-green-600 transition-all font-poppins tracking-wide"
-             >
-              About
-            </Link>
-            <Link 
-              href="/contact" 
-              className="text-lg font-medium text-gray-800 hover:text-green-600 transition-all font-poppins tracking-wide"
-            >
-              Contact
-            </Link>
+              >
+                Services
+              </Link>
+              <Link 
+                href="/about" 
+                className="text-lg font-medium text-gray-800 hover:text-green-600 transition-all font-poppins tracking-wide"
+                onClick={() => setMenuOpen(false)}
+              >
+                About
+              </Link>
+              <Link 
+                href="/contact" 
+                className="text-lg font-medium text-gray-800 hover:text-green-600 transition-all font-poppins tracking-wide"
+                onClick={() => setMenuOpen(false)}
+              >
+                Contact
+              </Link>
             </div>
           </motion.div>
         )}
