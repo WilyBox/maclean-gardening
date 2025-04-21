@@ -45,6 +45,10 @@ html, body {
   opacity: 1; /* Ensures full opacity */
 }
 
+bg-opacity-50 {
+  opacity: 0.5!important;
+}
+
 .text-gray-500 {
   color: #6b7280; /* Adjust if necessary */
   font-weight: 400; /* Keeps it lighter but fully opaque */

@@ -1,29 +1,31 @@
 import ModernCarousel from "./ModernCarousel";
+import Link from "next/link";
+import { FaFacebook } from "react-icons/fa";
 
 export default function HeroSimple() {
   return (
     <section className="relative w-full pt-4 px-8 pb-12 max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-8">
       {/* Left Side - Text (flex-shrink) */}
       <div className="text-center lg:text-left flex-shrink-0 max-w-lg">
-        <h1 className="text-5xl md:text-6xl font-bold text-gray-900 leading-tight">
-          Transform Your Outdoor Space
+        <h1 className="text-4xl md:text-6xl font-bold text-gray-900 leading-tight">
+          How can we help?
         </h1>
         <p className="mt-4 text-lg text-gray-700">
-          Providing reliable garden care for Dunoon and surrounding areas. Get in touch for a free quote.
+        We are dedicated to providing the best possible service to you, and take pride in maintaining gardens to a high standard.
         </p>
         <div className="mt-8 flex flex-col sm:flex-row justify-center lg:justify-start gap-4">
-          <a
-            href="/services"
-            className="inline-block rounded-md bg-green-600 px-6 py-3 text-white text-lg font-semibold hover:bg-green-700"
+        <Link 
+            href="https://www.facebook.com/profile.php?id=61568108347078" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="logo-color-facebook hover:text-blue-800 transition-all"
           >
-            Get Started
-          </a>
-          <a
-            href="/contact"
-            className="text-lg font-semibold text-gray-900 border border-gray-300 px-6 py-3 rounded-md hover:bg-gray-100"
-          >
-            Learn more →
-          </a>
+            <div className="flex flex-row justify-center">
+            <p className="text-xl font-bold logo-color-facebook pe-2 underline" >See us on Facebook</p>
+
+            <FaFacebook size={32} />
+            </div>
+          </Link>
         </div>
       </div>
 
