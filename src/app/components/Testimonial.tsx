@@ -1,9 +1,5 @@
 "use client";
 
-import Image from "next/image";
-import { FaFacebook, FaGoogle } from "react-icons/fa";
-import SimpleAccordion from "./SimpleAccordion"; // ✅ Import the accordion component
-
 import SkillsGrid from "./SkillsGrid";
 
 
