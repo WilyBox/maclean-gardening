@@ -38,10 +38,10 @@ const ServicesGrid = ({ services }: ServicesGridProps) => {
       {services.map((service, index) => (
         <motion.li
           key={index}
-          className="p-6 border rounded-xl shadow-md flex flex-col items-start gap-4 bg-white"
+          className="p-6 border border-green-500 rounded-xl shadow-md flex flex-col items-start gap-4 bg-white"
           variants={itemVariants}
         >
-        <h3 className="text-2xl font-semibold inline-block border-b-2 border-green-500 pb-1">{service.title}</h3>
+        <h3 className="text-2xl text-gray-900 font-semibold inline-block border-b-2 pb-1">{service.title}</h3>
 
           <img
             src={service.imageUrl}

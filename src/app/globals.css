@@ -27,6 +27,10 @@ body {
   font-family: var(--font-sans), sans-serif; /* Use Poppins */
 }
 
+
+/* --- Text --- */
+
+
 h1, h2, h3, h4, h5, h6 {
   opacity: 1;
 }
@@ -47,6 +51,7 @@ html, body {
 .text-gray-900,
 .text-green-700 {
   opacity: 1; /* Ensures full opacity */
+  visibility: visible!important;
 }
 
 bg-opacity-50 {
@@ -98,17 +103,23 @@ bg-opacity-50 {
 }
 
 
-/* Ensure React Icons render correctly across all devices */
-svg {
-  fill: currentColor !important;
-  stroke: currentColor !important;
-  opacity: 1 !important; /* Ensures full opacity */
-}
-
-
 a {
   opacity: 1 !important; /* Ensures full visibility */
   visibility: visible !important; /* Ensures the button is not hidden */
+}
+
+
+/* --- Text --- */
+
+
+
+/* --- Border --- */
+
+
+.border {
+  opacity: 1 !important; /* Ensures full opacity */
+  visibility: visible !important; /* Ensures it's not hidden */
+  border-width: 1px !important;
 }
 
 
@@ -117,6 +128,19 @@ a {
   opacity: 1 !important; /* Ensures full opacity */
   visibility: visible !important; /* Ensures it's not hidden */
 }
+
+.border-green-500 {
+  border-color: #16a34a !important; /* Ensures correct green shade */
+  opacity: 1 !important; /* Ensures full opacity */
+  visibility: visible !important; /* Ensures it's not hidden */
+}
+
+/* --- Border --- */
+
+
+
+
+/* --- Backgrounds --- */
 
 .bg-green-600 {
   background-color: #16a34a !important; /* Ensures correct green shade */
@@ -134,3 +158,20 @@ a {
   opacity: 1 !important; /* Ensures full opacity */
 }
 
+/* --- Backgrounds --- */
+
+
+
+/* Ensure React Icons render correctly across all devices */
+svg {
+  fill: currentColor !important;
+  stroke: currentColor !important;
+  opacity: 1 !important; /* Ensures full opacity */
+}
+
+
+.shadow-lg {
+  opacity: 1 !important; /* Ensures full opacity */
+  visibility: visible !important; /* Ensures it's not hidden */
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.2);
+}
