@@ -47,7 +47,7 @@ const SkillsGrid = ({ skills }: SkillsGridProps) => {
               className="w-16 h-16 object-contain"
           />
           <div>
-            <h3 className="text-xl font-semibold">{skill.title}</h3>
+            <h3 className="text-xl text-gray-900 font-semibold">{skill.title}</h3>
             <p className="text-gray-600 mt-2">{skill.description}</p>
           </div>
         </motion.li>

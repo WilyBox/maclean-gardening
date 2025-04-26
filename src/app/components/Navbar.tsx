@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname, useRouter } from "next/navigation";
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
@@ -10,8 +9,7 @@ import { FaFacebook } from "react-icons/fa";
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const pathname = usePathname(); // Get current page
-  const router = useRouter(); // Next.js router for navigation
+
 
   // Scroll smoothly after navigating to the homepage
   useEffect(() => {
@@ -25,22 +23,6 @@ export default function Navbar() {
     }
   }, []);
 
-  const handleServicesClick = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
-    e.preventDefault();
-
-    if (pathname === "/") {
-      // If already on the home page, just scroll
-      const element = document.getElementById("services-accordion");
-      if (element) {
-        element.scrollIntoView({ behavior: "smooth" });
-      }
-    } else {
-      // If on another page, navigate to home and scroll after loading
-      router.push("/#services-accordion");
-    }
-
-    setMenuOpen(false); // Close mobile menu after clicking
-  };
 
   return (
     <div className="relative w-full bg-white shadow-md z-50">
@@ -117,8 +99,7 @@ export default function Navbar() {
                 Home
               </Link>
               <Link 
-                href="/#services-accordion" 
-                onClick={handleServicesClick}
+                href="/services" 
                 className="text-lg font-medium text-gray-800 hover:text-green-600 transition-all font-poppins tracking-wide cursor-pointer"
               >
                 Services

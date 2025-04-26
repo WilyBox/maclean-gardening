@@ -13,7 +13,7 @@ const services  = [
   ];
 
   return (
-    <section className="relative w-full pt-4 px-8 pb-12 max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-8">
+    <section className="bg-white relative w-full pt-4 px-8 pb-12 max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-8">
       <ServicesGrid services={services} />
     </section>
   );

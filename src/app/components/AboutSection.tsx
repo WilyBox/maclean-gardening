@@ -72,20 +72,20 @@ const AboutSection = () => {
 
   {/* Values Card */}
   <div className="bg-white shadow-lg rounded-2xl p-6">
-    <h3 className="text-2xl font-bold mb-6 text-center ">Our Values</h3>
+    <h3 className="text-2xl text-gray-900 font-bold mb-6 text-center ">Our Values</h3>
 
     {/* Icons */}
     <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-center">
       <div className="flex flex-col items-center">
-        <FaHandshake className="text-3xl text-green-600 mb-2" />
+        <FaHandshake className="text-3xl text-green-700 mb-2" />
         <p className="font-medium text-gray-700">Client Satisfaction</p>
       </div>
       <div className="flex flex-col items-center">
-        <FaClock className="text-3xl text-green-600 mb-2" />
+        <FaClock className="text-3xl text-green-700 mb-2" />
         <p className="font-medium text-gray-700">Efficiency</p>
       </div>
       <div className="flex flex-col items-center">
-        <FaLeaf className="text-3xl text-green-600 mb-2" />
+        <FaLeaf className="text-3xl text-green-700 mb-2" />
         <p className="font-medium text-gray-700">Integrity</p>
       </div>
     </div>
