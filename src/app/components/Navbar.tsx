@@ -74,8 +74,8 @@ export default function Navbar() {
             Home
           </Link>
           <Link 
-            href="/#services-accordion" 
-            onClick={handleServicesClick}
+            href="/services" 
+            // onClick={handleServicesClick}
             className="text-lg font-medium text-gray-800 hover:text-green-600 transition-all font-poppins tracking-wide cursor-pointer"
           >
             Services
