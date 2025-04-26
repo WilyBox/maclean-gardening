@@ -114,7 +114,28 @@ a {
 
 
 /* --- Border --- */
-/* Letting tailwind do its thing */
+.border {
+  opacity: 1 !important;
+  visibility: visible !important;
+  border-width: 1px !important;
+  border-style: solid !important; /* <-- important fix */
+}
+
+.border-gray-300 {
+  border-color: #d1d5db !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  border-style: solid !important; /* <-- also add here just in case */
+}
+
+.border-green-500 {
+  border-color: #16a34a !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  border-style: solid !important; /* <-- and here */
+}
+/* --- Border --- */
+
 
 
 
