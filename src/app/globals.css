@@ -114,28 +114,7 @@ a {
 
 
 /* --- Border --- */
-
-
-.border {
-  opacity: 1 !important; /* Ensures full opacity */
-  visibility: visible !important; /* Ensures it's not hidden */
-  border-width: 1px !important;
-}
-
-
-.border-gray-300 {
-  border-color: #d1d5db !important; /* Ensures correct border color */
-  opacity: 1 !important; /* Ensures full opacity */
-  visibility: visible !important; /* Ensures it's not hidden */
-}
-
-.border-green-500 {
-  border-color: #16a34a !important; /* Ensures correct green shade */
-  opacity: 1 !important; /* Ensures full opacity */
-  visibility: visible !important; /* Ensures it's not hidden */
-}
-
-/* --- Border --- */
+/* Letting tailwind do its thing */
 
 
 
