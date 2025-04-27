@@ -1,29 +1,32 @@
 "use client";
 
-// import SkillsGrid from "./SkillsGrid";
-import ServicesGrid from "./ServicesGrid";
+import SkillsGrid from "./SkillsGrid";
 
 
 export default function TestimonialSection() {
-  const services  = [
-    { title: "Hedge Maintenance", description: "Experienced in trimming and shaping hedges to enhance garden aesthetics.", imageUrl: "/images/services/hedges.webp" },
-    { title: "Lawn Care Expertise", description: "Knowledgeable in mowing, strimming, and seeding to maintain a lush lawn.", imageUrl: "/images/services/garden-care.webp" },
-    { title: "Weed Management", description: "Committed to keeping gardens neat by effectively removing weeds.", imageUrl: "/images/services/weed-remov.webp" },
-    { title: "Garden Restoration", description: "Skilled in clearing overgrown areas and managing garden waste responsibly.", imageUrl: "/images/services/mown-lawn.webp" },
-    { title: "Planting & Design", description: "Passionate about designing and planting flower beds for year-round beauty.", imageUrl: "/images/services/flowers.webp" },
-    { title: "Vegetable Gardening", description: "Interested in helping others grow their own fresh produce at home.", imageUrl: "/images/services/veg-plots.webp" },
+  const skills = [
+    { title: "Hedge Maintenance", imageUrl:"/images/icons/shears.svg",description: "Experienced in trimming and shaping hedges to enhance garden aesthetics." },
+    { title: "Lawn Care Expertise", imageUrl:"/images/icons/hose.svg", description: "Knowledgeable in mowing, strimming, and seeding to maintain a lush lawn." },
+    { title: "Weed Management", imageUrl:"/images/icons/trowel.svg", description: "Committed to keeping gardens neat by effectively removing weeds." },
+    { title: "Garden Restoration", imageUrl:"/images/icons/flower-pot.svg", description: "Skilled in clearing overgrown areas and managing garden waste responsibly." },
+    { title: "Planting & Design", imageUrl:"/images/icons/watering-can.svg", description: "Passionate about designing and planting flower beds for year-round beauty." },
+    { title: "Vegetable Gardening",imageUrl:"/images/icons/carrot.svg", description: "Interested in helping others grow their own fresh produce at home." },
   ];
-
 
 
   return (
 
     <section className="container max-w-7xl mx-auto py-12 lg:py-16 ">
 
-      <h2 className="text-3xl font-bold mb-8 text-center">Our Services</h2>
-      <div className="flex flex-col lg:flex-row gap-8">
+<h2 className="text-3xl font-bold mb-8 text-center">Our Services</h2>
+
+      {/* Right Column: Services + Ratings */}
+      <div className="lg:full flex flex-col lg:flex-row gap-8">
+        {/* Top Card: Services Accordion (Replaces old list) */}
         <div className="rounded-2xl" id="servicesAccordion">
-          <ServicesGrid services={services} />
+          {/* <SimpleAccordion />  */}
+
+          <SkillsGrid skills={skills} />
         </div>
 
 
