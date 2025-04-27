@@ -1,6 +1,8 @@
 "use client";
 
+// import SkillsGrid from "../components/SkillsGrid";
 import ServicesGrid from "../components/ServicesGrid";
+
 
 export default function Services() {
 const services  = [

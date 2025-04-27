@@ -75,10 +75,10 @@ const AboutSection = () => {
     <h3 className="text-2xl text-gray-900 font-bold mb-6 text-center ">Our Values</h3>
 
     {/* Icons */}
-    <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-center">
+    <div className="grid grid-cols-3 sm:grid-cols-3 gap-4 text-center">
       <div className="flex flex-col items-center">
         <FaHandshake className="text-3xl text-green-700 mb-2" />
-        <p className="font-medium text-gray-700">Client Satisfaction</p>
+        <p className="font-medium text-gray-700">Integrity</p>
       </div>
       <div className="flex flex-col items-center">
         <FaClock className="text-3xl text-green-700 mb-2" />
@@ -86,7 +86,7 @@ const AboutSection = () => {
       </div>
       <div className="flex flex-col items-center">
         <FaLeaf className="text-3xl text-green-700 mb-2" />
-        <p className="font-medium text-gray-700">Integrity</p>
+        <p className="font-medium text-gray-700">Results</p>
       </div>
     </div>
 
