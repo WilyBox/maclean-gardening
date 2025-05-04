@@ -11,11 +11,29 @@ export default function ContactUs() {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  // calling the API route in the frontend
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
-    // Handle form submission logic here
+  
+    try {
+      const res = await fetch('/api/send-email', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+  
+      const result = await res.json();
+  
+      if (res.ok) {
+        console.log('✅ Email sent:', result.message);
+      } else {
+        console.error('❌ Failed to send email:', result.message);
+      }
+    } catch (err) {
+      console.error('❌ Error during fetch:', err);
+    }
   };
+  
 
   return (
     <div className="relative flex flex-col items-center justify-center min-h-screen bg-gray-900 p-4 space-y-6">
