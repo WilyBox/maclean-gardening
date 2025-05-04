@@ -12,6 +12,8 @@ export default function ContactUs() {
   };
 
   // calling the API route in the frontend
+  const [status, setStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle');
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
   
@@ -25,8 +27,12 @@ export default function ContactUs() {
       const result = await res.json();
   
       if (res.ok) {
-        console.log('✅ Email sent:', result.message);
-      } else {
+        setFormData((prev) =>
+          Object.fromEntries(Object.keys(prev).map((key) => [key, ''])) as typeof prev
+        );
+        setStatus('sent');
+      }
+      else {
         console.error('❌ Failed to send email:', result.message);
       }
     } catch (err) {
@@ -82,6 +88,11 @@ export default function ContactUs() {
             Send Message
           </button>
         </form>
+        
+        {status === 'sent' && <p className="text-green-400">✅ Message sent!</p>}
+{status === 'error' && <p className="text-red-400">❌ Something went wrong.</p>}
+{status === 'sending' && <p className="text-white">Sending...</p>}
+
       </div>
 
       {/* Facebook Contact Card */}
