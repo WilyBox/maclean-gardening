@@ -5,6 +5,8 @@ import "./globals.css";
 import Navbar from "@/app/components/Navbar"; // Import Navbar
 // import Layout from "@/app/components/Layout"; // Import Layout
 import Footer from "@/app/components/Footer"; // Import Footer
+import Script from "next/script";
+
 
 
 // Font setup
@@ -72,6 +74,22 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className={poppins.variable}>
+      <head>
+        {/* Google Analytics Script */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-BM1H6GD0XS"
+          strategy="afterInteractive"
+        />
+        <Script id="ga4-init" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-BM1H6GD0XS');
+          `}
+        </Script>
+
+      </head>
       <body className={`${poppins.variable} ${geistMono.variable} antialiased bg-white`}>
         <Navbar /> {/* Include the Navbar here */}
         {children}
