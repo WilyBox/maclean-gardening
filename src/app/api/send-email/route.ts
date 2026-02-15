@@ -2,9 +2,40 @@
 import { NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
 
+// ✅ ADD HERE — module scope (VERY important)
+const rateLimitMap = new Map<string, { count: number; time: number }>();
+const WINDOW = 60_000; // 1 minute
+const MAX = 5; // max submissions per window
+
+
 export async function POST(req: Request) {
+
   const body = await req.json();
-  const { name, email, message } = body;
+  const { name, email, message, company } = body;
+  
+  // Rate limiting
+  const ip =
+    req.headers.get('x-forwarded-for') ??
+    'unknown';
+    
+  const now = Date.now();
+  const record = rateLimitMap.get(ip);
+
+  if (record && now - record.time < WINDOW) {
+    if (record.count >= MAX) {
+      return NextResponse.json(
+      { message: 'Too many requests' },
+      { status: 429 }
+    );}
+    record.count++;
+  } else {
+    rateLimitMap.set(ip, { count: 1, time: now });
+  }
+
+  // Spam detection
+  if (company) {
+    return NextResponse.json({ message: 'Spam detected' }, { status: 200 });
+  }
 
   if (!name || !email || !message) {
     return NextResponse.json({ message: 'Missing required fields' }, { status: 400 });

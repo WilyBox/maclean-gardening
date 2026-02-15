@@ -5,7 +5,7 @@ import { useState } from 'react';
 import { FaFacebook } from 'react-icons/fa';
 
 export default function ContactUs() {
-  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+  const [formData, setFormData] = useState({ name: '', email: '', message: '', company: '' });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -55,6 +55,15 @@ export default function ContactUs() {
       <div className="relative bg-transparent p-6 rounded-lg shadow-md w-full max-w-md z-10 border-2 border-white">
         <h2 className="text-2xl font-bold mb-4 text-white text-center">Contact Us</h2>
         <form onSubmit={handleSubmit} className="flex flex-col space-y-4">
+
+          <input
+          type="text"
+          name="company"
+          autoComplete="off"
+          className="hidden"
+          tabIndex={-1}
+          />
+          
           <input 
             type="text" 
             name="name" 
