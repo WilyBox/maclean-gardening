@@ -20,10 +20,27 @@ export async function POST(req: Request) {
 
   try {
     await transporter.sendMail({
-      from: `"${name}" <${email}>`,
+      // IMPORTANT: with Gmail SMTP, "from" should usually be YOUR gmail account
+      // otherwise it can fail DMARC/SPF or get rewritten.
+      from: `Website Contact <${process.env.EMAIL_USER}>`,
+
+      // This makes "Reply" go to the user's email (what you actually want)
+      replyTo: email,
+
       to: process.env.RECEIVER_EMAIL,
       subject: `New message from ${name}`,
-      text: message,
+
+      // ✅ include email + name in the body
+      text: `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`,
+
+      // optional but nice: html version
+      html: `
+        <h3>New Contact Form Submission</h3>
+        <p><strong>Name:</strong> ${name}</p>
+        <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Message:</strong></p>
+        <p>${String(message).replace(/\n/g, '<br/>')}</p>
+      `,
     });
 
     return NextResponse.json({ message: 'Email sent successfully' });
@@ -32,5 +49,3 @@ export async function POST(req: Request) {
     return NextResponse.json({ message: 'Error sending email' }, { status: 500 });
   }
 }
-
-
